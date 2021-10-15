@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Visitor">
         <activity
+            android:name=".ListHousesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterHouseActivity"
+            android:exported="false" />
+        <activity
             android:name=".CarListActivity"
             android:exported="true" />
         <activity
