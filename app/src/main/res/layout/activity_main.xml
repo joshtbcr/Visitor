@@ -8,33 +8,37 @@
     android:id="@+id/drawarLayout"
     android:background="@drawable/gradient_background"
     tools:context=".MainActivity">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <LinearLayout
-            android:orientation="horizontal"
-            android:elevation="16dp"
-            android:background="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize">
+            android:layout_height="?actionBarSize"
+            android:background="@color/white"
+            android:elevation="16dp"
+            android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/imgMenu"
-                android:padding="8dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_menu"
                 android:layout_width="40dp"
-                android:layout_height="40dp"/>
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:src="@drawable/ic_menu" />
+
             <TextView
                 android:id="@+id/title"
-                android:text="@string/app_name"
-                android:layout_gravity="center"
-                android:textStyle="bold|normal"
-                android:textSize="18sp"
-                android:layout_margin="15dp"
-                android:textColor="#192436"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                android:text="@string/app_name"
+                android:textColor="#192436"
+                android:textSize="18sp"
+                android:textStyle="bold|normal" />
 
 
         </LinearLayout>
