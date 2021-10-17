@@ -3,28 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/gradient_background.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_car.xml" value="0.1675925925925926" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_contactus.xml" value="0.3828125" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_home.xml" value="0.3828125" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_list.xml" value="0.22916666666666666" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_menu_item.xml" value="0.3828125" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_more.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_notification.xml" value="0.3828125" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_policy.xml" value="0.3472222222222222" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_profile.xml" value="0.3472222222222222" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_settings.xml" value="0.1675925925925926" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/ic_visitantes.xml" value="0.1675925925925926" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/drawable/toolbar_background.xml" value="0.3828125" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/font/montserrat.xml" value="0.24322916666666666" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/layout/activity_car_list.xml" value="0.21302083333333333" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/layout/activity_cars.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/layout/activity_main.xml" value="0.3532608695652174" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/layout/main_nav_drawer.xml" value="0.3532608695652174" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/layout/main_toolbar.xml" value="0.503125" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/layout/nav_drawar.xml" value="0.353713768115942" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/layout/nava_heder.xml" value="0.353713768115942" />
-        <entry key="..\:/Users/MonicaZA/Documents/Proy4/visitor/app/src/main/res/menu/nav_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/jotorres/Documents/U/proyecto4/proyectos/visitor/app/src/main/res/drawable/custom_input.xml" value="0.1574074074074074" />
+        <entry key="..\:/Users/jotorres/Documents/U/proyecto4/proyectos/visitor/app/src/main/res/drawable/loginbtn.xml" value="0.22777777777777777" />
+        <entry key="..\:/Users/jotorres/Documents/U/proyecto4/proyectos/visitor/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/jotorres/Documents/U/proyecto4/proyectos/visitor/app/src/main/res/layout/activity_main.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/jotorres/Documents/U/proyecto4/proyectos/visitor/app/src/main/res/layout/nav_drawar.xml" value="0.33" />
+        <entry key="..\:/Users/jotorres/Documents/U/proyecto4/proyectos/visitor/app/src/main/res/layout/nava_heder.xml" value="0.10739614994934144" />
+        <entry key="..\:/Users/jotorres/Documents/U/proyecto4/proyectos/visitor/app/src/main/res/menu/nav_item.xml" value="0.22083333333333333" />
       </map>
     </option>
   </component>

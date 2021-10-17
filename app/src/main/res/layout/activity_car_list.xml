@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/media_result_20211007_d83cc15e_d96f_4837_bac7_e575bf5d555d__1___1_" />
+        app:srcCompat="@drawable/visitor_logo" />
 
 
     <TextView

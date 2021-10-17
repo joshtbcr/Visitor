@@ -17,4 +17,7 @@
     <string name="lista_de_carros">Lista de carros</string>
     <string name="registrar_carro">Registrar carro</string>
     <string name="divider">divider</string>
+    <string name="visitor_logo">visitor logo</string>
+    <string name="email">Número de cédula</string>
+    <string name="access">Iniciar Sesión</string>
 </resources>
