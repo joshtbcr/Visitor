@@ -25,7 +25,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/reg_visit_form"
             android:layout_width="333dp"
             android:layout_height="380dp"
             android:layout_marginTop="55dp"
@@ -40,6 +40,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idVisitanteInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Id del visitante"
@@ -52,6 +53,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nombreVisitanteInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nombre"
@@ -64,6 +66,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/apellidoVisitanteInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Apellido" />
@@ -75,6 +78,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fechaIngresoInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Fecha"
@@ -87,6 +91,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/horaIngresoInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Hora"
@@ -99,6 +104,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/celularInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Celular"
@@ -108,14 +114,14 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/reg_visit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Registrar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/reg_visit_form"
             app:layout_constraintVertical_bias="0.382" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
