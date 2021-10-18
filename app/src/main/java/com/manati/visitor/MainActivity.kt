@@ -1,7 +1,9 @@
 package com.manati.visitor
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ImageView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -27,10 +29,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView = findViewById<NavigationView>(R.id.navDawar)
         navigationView.itemIconTintList = null
         imgMenu.setOnClickListener {
-            drawarLayout.openDrawer(GravityCompat.START)
+            drawerLayout.openDrawer(GravityCompat.START)
         }
-
-
+    }
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         var intentMenu = Intent()
         intentMenu.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
