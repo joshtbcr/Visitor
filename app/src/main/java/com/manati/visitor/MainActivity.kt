@@ -1,11 +1,8 @@
 package com.manati.visitor
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.ImageView
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
@@ -30,10 +27,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView = findViewById<NavigationView>(R.id.navDawar)
         navigationView.itemIconTintList = null
         imgMenu.setOnClickListener {
-            drawerLayout.openDrawer(GravityCompat.START)
+            drawarLayout.openDrawer(GravityCompat.START)
         }
-        navigationView.setNavigationItemSelectedListener(this)
-    }
 
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
