@@ -35,8 +35,8 @@ class LoginActivity : AppCompatActivity() {
             if (!editTextEmail.text.isNullOrBlank()) {
                 val input = editTextEmail.text.toString()
                 when(input){
-                     TipoUsuario.PROPIETARIO.tipo-> showHome(input)
-                    TipoUsuario.PROPIETARIO.tipo -> showHome(input)
+                    TipoUsuario.PROPIETARIO.tipo-> showHome(input)
+                    TipoUsuario.SEGURIDAD.tipo -> showHome(input)
                     else ->{
                         val context = this
                         val alertBuilder = AlertDialog.Builder(context)
