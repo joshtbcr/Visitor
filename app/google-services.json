@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1071949880387",
+    "firebase_url": "https://visitor-bc887-default-rtdb.firebaseio.com",
+    "project_id": "visitor-bc887",
+    "storage_bucket": "visitor-bc887.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071949880387:android:14c0cd1e0eccd6285508f6",
+        "android_client_info": {
+          "package_name": "com.manati.visitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071949880387-p5vuaberacqb79qolc23o6qus3g9t98b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.manati.visitor",
+            "certificate_hash": "079b2693d197d0e839142f646d0054752968f3fa"
+          }
+        },
+        {
+          "client_id": "1071949880387-l4cmcj5bac1s570mcbfu53r5i7jp3ac2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7nHQHzp_wRTEoJP0RBKL19WxJaF8_srg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071949880387-l4cmcj5bac1s570mcbfu53r5i7jp3ac2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
