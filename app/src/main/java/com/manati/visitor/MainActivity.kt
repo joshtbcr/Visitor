@@ -8,6 +8,8 @@ import android.widget.ImageView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.manati.visitor.model.Constants
+import com.manati.visitor.model.TipoUsuario
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
@@ -16,7 +18,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        val bundle = intent.extras
+        val tipoUsuario = bundle?.getString(Constants.USERTYPE)
+
+        when (tipoUsuario) {
+            TipoUsuario.PROPIETARIO.tipo -> {
+                setContentView(R.layout.activity_main)
+            }
+            TipoUsuario.SEGURIDAD.tipo -> {
+                setContentView(R.layout.activity_main_security)
+            }
+
+        }
+
         setupMenu()
         navigationView.setNavigationItemSelectedListener(this)
 

@@ -100,7 +100,7 @@
     </LinearLayout>
 
     <!--add drawerlayout-->
-    <include layout="@layout/nav_drawar"/>
+    <include layout="@layout/nav_drawar_security"/>
 
 
 

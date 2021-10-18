@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.drawerlayout.widget.DrawerLayout
+import com.manati.visitor.model.Constants
 import com.manati.visitor.model.TipoUsuario
 
 
@@ -53,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showHome(tipoUsuario: String) {
         var intent = Intent(this, MainActivity::class.java).apply {
-            //putExtra(tipoUsuario)
+            putExtra(Constants.USERTYPE,tipoUsuario)
         }
         startActivity(intent)
     }
