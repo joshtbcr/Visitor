@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.drawerlayout.widget.DrawerLayout
+import com.manati.visitor.model.TipoUsuario
 
 
 class LoginActivity : AppCompatActivity() {
@@ -32,9 +33,10 @@ class LoginActivity : AppCompatActivity() {
         buttonLogIn.setOnClickListener {
             val editTextEmail = findViewById<EditText>(R.id.editTextEmail)
             if (!editTextEmail.text.isNullOrBlank()) {
-                when(editTextEmail.text.toString()){
-                    "visitante" -> showHome()
-                    "seguridad" -> showHome()
+                val input = editTextEmail.text.toString()
+                when(input){
+                     TipoUsuario.PROPIETARIO.tipo-> showHome(input)
+                    TipoUsuario.PROPIETARIO.tipo -> showHome(input)
                     else ->{
                         val context = this
                         val alertBuilder = AlertDialog.Builder(context)
@@ -49,8 +51,10 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun showHome() {
-        var intent = Intent(this, MainActivity::class.java)
+    private fun showHome(tipoUsuario: String) {
+        var intent = Intent(this, MainActivity::class.java).apply {
+            //putExtra(tipoUsuario)
+        }
         startActivity(intent)
     }
 
