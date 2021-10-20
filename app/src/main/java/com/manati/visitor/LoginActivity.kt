@@ -8,9 +8,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.drawerlayout.widget.DrawerLayout
+import com.manati.visitor.data.Usuarios
 import com.manati.visitor.model.Constants
-import com.manati.visitor.model.TipoUsuario
+import com.manati.visitor.model.Usuario
 
 
 class LoginActivity : AppCompatActivity() {
@@ -29,32 +29,40 @@ class LoginActivity : AppCompatActivity() {
         setupLoginButton()
     }
 
+
+
     private fun setupLoginButton() {
         val buttonLogIn = findViewById<Button>(R.id.buttonLogIn)
         buttonLogIn.setOnClickListener {
-            val editTextEmail = findViewById<EditText>(R.id.editTextEmail)
-            if (!editTextEmail.text.isNullOrBlank()) {
-                val input = editTextEmail.text.toString()
-                when(input){
-                    TipoUsuario.PROPIETARIO.tipo-> showHome(input)
-                    TipoUsuario.SEGURIDAD.tipo -> showHome(input)
-                    else ->{
-                        val context = this
-                        val alertBuilder = AlertDialog.Builder(context)
-                        alertBuilder.setTitle(title)
-                        alertBuilder.setMessage("Error")
-                        alertBuilder.setPositiveButton("Aceptar", null)
-                        val dialog: AlertDialog = alertBuilder.create()
-                        dialog.show()
-                    }
+            val editTextCedula = findViewById<EditText>(R.id.editTextEmail)
+            if (!editTextCedula.text.isNullOrBlank()) {
+                val inputCedula = editTextCedula.text.toString()
+
+                val usuarios = Usuarios()
+                usuarios.cargarUsuarios()
+                val usuario = usuarios.existeUsuario(inputCedula)
+
+                if(usuario !=null){
+                    showHome(usuario)
+                }else{
+                    val context = this
+                    val alertBuilder = AlertDialog.Builder(context)
+                    alertBuilder.setTitle(title)
+                    alertBuilder.setMessage("Usuario no existe.")
+                    alertBuilder.setPositiveButton("Ok", null)
+                    val dialog: AlertDialog = alertBuilder.create()
+                    dialog.show()
+
                 }
             }
         }
     }
 
-    private fun showHome(tipoUsuario: String) {
+    private fun showHome(usuario: Usuario) {
         var intent = Intent(this, MainActivity::class.java).apply {
-            putExtra(Constants.USERTYPE,tipoUsuario)
+            putExtra(Constants.CEDULA,usuario.cedula)
+            putExtra(Constants.NOMBRE,usuario.nombreCompleto)
+            putExtra(Constants.TIPOUSUARIO,usuario.tipoUsuario)
         }
         startActivity(intent)
     }

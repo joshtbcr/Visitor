@@ -51,7 +51,7 @@ class CarsActivity : AppCompatActivity() {
 
     private fun showHome(tipoUsuario: String) {
         val homeIntent = Intent(this, MainActivity::class.java).apply {
-            putExtra(Constants.USERTYPE, tipoUsuario)
+            putExtra(Constants.TIPOUSUARIO, tipoUsuario)
         }
         startActivity(homeIntent)
         finish()
