@@ -3,26 +3,38 @@ package com.manati.visitor
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.view.GravityCompat
+import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.manati.visitor.model.Constants
 import com.manati.visitor.model.TipoUsuario
+import com.manati.visitor.model.Usuario
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
     private lateinit var imgMenu : ImageView
+    private lateinit var usuario : Usuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val bundle = intent.extras
-        val tipoUsuario = bundle?.getString(Constants.USERTYPE)
+        val cedula = bundle?.getString(Constants.CEDULA)
+        val nombre = bundle?.getString(Constants.NOMBRE)
+        val tipoUsuario = bundle?.getString(Constants.TIPOUSUARIO)
 
-        when (tipoUsuario) {
+        usuario = Usuario(cedula!!,nombre!!,tipoUsuario!!)
+
+
+        when (usuario.tipoUsuario) {
             TipoUsuario.PROPIETARIO.tipo -> {
                 setContentView(R.layout.activity_main)
             }
@@ -35,6 +47,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setupMenu()
         navigationView.setNavigationItemSelectedListener(this)
 
+
     }
 
     private fun setupMenu() {
@@ -46,6 +59,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         imgMenu.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
         }
+
+        var headerView  = navigationView.getHeaderView(0)
+        var nombreMenu = headerView.findViewById<TextView>(R.id.nombreMenuText)
+        nombreMenu.setText(usuario.nombreCompleto)
+
+        val tipoUsuarioMenu = headerView.findViewById<TextView>(R.id.tipoUsuarioMenuText)
+        tipoUsuarioMenu.setText(usuario.tipoUsuario)
+
     }
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         var intentMenu = Intent()

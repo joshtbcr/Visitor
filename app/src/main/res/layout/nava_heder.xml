@@ -20,14 +20,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
-                android:text="Susan Rojas"
+                android:id="@+id/nombreMenuText"
+                android:text="test"
                 android:textSize="20sp"
                 android:textStyle="bold|normal"
                 android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
-                android:text="Propietario"
+                android:text="test"
+                android:id="@+id/tipoUsuarioMenuText"
                 android:textSize="10sp"
                 android:textStyle="normal"
                 android:textColor="@color/white"
