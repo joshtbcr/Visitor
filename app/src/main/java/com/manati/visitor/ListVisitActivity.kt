@@ -2,6 +2,7 @@ package com.manati.visitor
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ListView
 import android.widget.TextView
 import com.manati.visitor.model.*
@@ -10,13 +11,17 @@ class ListVisitActivity : AppCompatActivity() {
 
    // val miVisita: MutableList<Visit> = ArrayList()
     val miVisita = ArrayList<Visit>()
+    var list = mutableListOf<ModelVisit>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        Log.d("myTag", "onCreateVisitas()")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_visit)
 
         var listView = findViewById<ListView>(R.id.listVisit)
         var list = mutableListOf<ModelVisit>()
+
 
         val lista: ArrayList<String>? = intent.getStringArrayListExtra("visita")
 
