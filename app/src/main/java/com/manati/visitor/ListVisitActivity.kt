@@ -2,6 +2,7 @@ package com.manati.visitor
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ListView
 import android.widget.TextView
 import com.manati.visitor.model.*
@@ -10,14 +11,16 @@ class ListVisitActivity : AppCompatActivity() {
 
    // val miVisita: MutableList<Visit> = ArrayList()
     val miVisita = ArrayList<Visit>()
+    var list = mutableListOf<ModelVisit>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        Log.d("myTag", "onCreateVisitas()")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_visit)
 
         var listView = findViewById<ListView>(R.id.listVisit)
 
-        var list = mutableListOf<ModelVisit>()
 
         list.add(ModelVisit("604140362","Elian","12/12/2021",R.drawable.ic_visit))
         list.add(ModelVisit("603710339","Irian","21/11/2021",R.drawable.ic_visit))
@@ -57,13 +60,7 @@ class ListVisitActivity : AppCompatActivity() {
                 val fechaVisitL = findViewById<TextView>(R.id.idVisit1)
                 fechaVisitL.setText(miVisita[0].fechaVisita + " hora: " + miVisita[0].horaVisita)
             }
-
-
-
         }
-
-
     }
-
 
 }
