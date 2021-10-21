@@ -111,4 +111,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             finishAffinity()
         }
     }
+
 }
