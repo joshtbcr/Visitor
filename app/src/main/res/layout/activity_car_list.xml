@@ -118,13 +118,14 @@
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbars="vertical">
 
 
-                </LinearLayout>
+        </LinearLayout>
 
                 <!--add drawerlayout-->
                 <include layout="@layout/nav_drawar" />

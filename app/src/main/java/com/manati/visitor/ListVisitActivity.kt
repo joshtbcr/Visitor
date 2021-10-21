@@ -16,12 +16,25 @@ class ListVisitActivity : AppCompatActivity() {
         setContentView(R.layout.activity_list_visit)
 
         var listView = findViewById<ListView>(R.id.listVisit)
-
         var list = mutableListOf<ModelVisit>()
 
+        val lista: ArrayList<String>? = intent.getStringArrayListExtra("visita")
+
+        val visit = Visit()
+        visit.idVisitante = lista?.get(0).toString()
+        visit.nombreVisitante = lista?.get(1).toString()
+        visit.apellidoVisitante = lista?.get(2).toString()
+        visit.fechaVisita = lista?.get(3).toString()
+        visit.horaVisita = lista?.get(4).toString()
+
+
+        val idVisitL = findViewById<TextView>(R.id.idVisit1)
+        list.add(ModelVisit(visit.idVisitante, visit.nombreVisitante + " " + visit.apellidoVisitante, visit.fechaVisita + " " + visit.horaVisita, R.drawable.ic_visit))
+
         list.add(ModelVisit("604140362","Elian","12/12/2021",R.drawable.ic_visit))
+
         list.add(ModelVisit("603710339","Irian","21/11/2021",R.drawable.ic_visit))
-        list.add(ModelVisit("602357841","Monica","14/11/2021",R.drawable.ic_visit))
+    //    list.add(ModelVisit("602357841","Monica","14/11/2021",R.drawable.ic_visit))
 
         listView.adapter = AdapterVisit(this, R.layout.row_visit, list)
     }
