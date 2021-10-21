@@ -12,12 +12,12 @@
         android:layout_width="254dp"
         android:layout_height="185dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
         app:srcCompat="@drawable/media_result_20211007_d83cc15e_d96f_4837_bac7_e575bf5d555d__1___1_" />
 
     <TextView
@@ -48,7 +48,7 @@
         android:id="@+id/imageView4"
         android:layout_width="44dp"
         android:layout_height="28dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider2"
@@ -58,11 +58,11 @@
         android:id="@+id/imageView5"
         android:layout_width="44dp"
         android:layout_height="28dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:srcCompat="@drawable/ic_baseline_house_24" />
+        app:srcCompat="@drawable/ic_baseline_house_25" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -81,8 +81,9 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/idInput"
+                android:layout_width="286dp"
+                android:layout_height="match_parent"
                 android:hint="Cédula" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -90,6 +91,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="298dp"
         android:layout_height="64dp"
         android:layout_marginStart="73dp"
@@ -102,13 +104,60 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="131dp">
+            android:layout_height="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/houseNumInput"
+                android:layout_width="286dp"
+                android:layout_height="54dp"
                 android:hint="Nº de casa" />
         </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSaveHouse"
+        android:layout_width="254dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:text="Guardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.819"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgMenu"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_menu" />
+
+        <TextView
+            android:id="@+id/title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:textColor="#192436"
+            android:textSize="18sp"
+            android:textStyle="bold|normal" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
