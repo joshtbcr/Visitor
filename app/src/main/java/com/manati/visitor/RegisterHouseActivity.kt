@@ -10,8 +10,10 @@ import com.manati.visitor.data.DataManager
 import com.manati.visitor.model.Car
 import com.manati.visitor.model.Constants
 import com.manati.visitor.model.HousesData
+import com.manati.visitor.model.TipoUsuario
 
 class RegisterHouseActivity : AppCompatActivity() {
+    private var housePosition = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,14 +31,16 @@ class RegisterHouseActivity : AppCompatActivity() {
                 val houseNumText = houseNumText.text.toString()
                 val idText = idText.text.toString()
 
+                DataManager.houses.add(HousesData())
+                housePosition = DataManager.houses.lastIndex
 
-                val newHouse = HousesData(
-                    idText,
-                    houseNumText)
+                saveHouse()
+                val int = DataManager.houses.size
+//                val newHouse = HousesData(
+//                    idText,
+//                    houseNumText)
 
-                DataManager.houses.add(newHouse)
-
-//                notePosition = DataManager.houses.lastIndex
+//                DataManager.houses.add(newHouse)
 
                 showHome("propietario")
 
@@ -54,10 +58,20 @@ class RegisterHouseActivity : AppCompatActivity() {
     }
 
     private fun showHome(tipoUsuario: String) {
-        val homeIntent = Intent(this, MainActivity::class.java).apply {
-            putExtra(Constants.TIPOUSUARIO, tipoUsuario)
-        }
-        startActivity(homeIntent)
-        finish()
+        setContentView(R.layout.activity_main)
+    }
+
+   /* override fun onPause() {
+        super.onPause()
+        saveHouse()
+    }*/
+
+    private fun saveHouse() {
+        val idText = findViewById<EditText>(R.id.idInput)
+        val houseNumText = findViewById<EditText>(R.id.houseNumInput)
+
+        val house = DataManager.houses[housePosition]
+        house.id = idText.text.toString()
+        house.houseNum = houseNumText.text.toString()
     }
 }

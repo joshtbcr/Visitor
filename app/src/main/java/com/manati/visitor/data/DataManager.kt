@@ -18,9 +18,5 @@ object DataManager {
 
         house = HousesData("115990150", "27BA")
         houses.add(house)
-
-        house = HousesData("115990150", "30A")
-        houses.add(house)
-
     }
 }

@@ -1,4 +1,4 @@
 package com.manati.visitor.model
 
-class HousesData (var id:String, var houseNum:String){
+data class HousesData (var id:String? = null, var houseNum:String ? = null){
 }
