@@ -14,8 +14,8 @@
         android:layout_height="match_parent"
         android:background="@drawable/gradient_background"
         tools:context=".MainActivity"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="96dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="59dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="?android:attr/listDivider"
+                android:background="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/textView3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.495"
@@ -137,18 +137,19 @@
 
             <Button
                 android:id="@+id/button_carSave"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_width="284dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="24dp"
                 android:background="@color/teal_700"
                 android:text="Guardar"
                 android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/modeloInput" />
+                app:layout_constraintTop_toBottomOf="@+id/marcaInput"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
