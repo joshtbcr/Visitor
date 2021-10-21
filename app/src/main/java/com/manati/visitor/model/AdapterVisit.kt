@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
+import android.widget.Switch
 import android.widget.TextView
 import com.manati.visitor.R
 
@@ -27,6 +28,12 @@ class AdapterVisit(var mCtx: Context, var resources:Int, var items:List<ModelVis
         nombreTextView.text = mItem.nombre
         fechatex.text = mItem.fechaIngreso
 
+        //Para el switch(Josh)
+        val switch: Switch = view.findViewById(R.id.switch1)
+        switch.setOnClickListener{
+            mItem.estado = true
+            switch.isClickable = false
+        }
 
         return view
     }
