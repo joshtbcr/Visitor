@@ -11,7 +11,7 @@ class CarListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_car_list)
 
-        var listView = findViewById<ListView>(R.id.listCars)
+        var listView = findViewById<ListView>(R.id.listVisit)
 
         var list = mutableListOf<ModelCar>()
 

@@ -1,136 +1,86 @@
 package com.manati.visitor
 
-import android.app.Activity
 import android.app.AlertDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
-import android.view.View
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.LinearLayout
-import androidx.core.view.isEmpty
-import com.google.android.material.textfield.TextInputLayout
-
-
-
+import com.manati.visitor.model.Constants
+import com.manati.visitor.model.Visit
 
 class RegisterVisitActivity : AppCompatActivity() {
-
-    private val MESSAGE_ERROR: String = "Error"
-    private val MESSAGE_ALERT: String = "Alerta"
-
-    lateinit var idVisitante: EditText
-    lateinit var nombreVisitante: EditText
-    lateinit var apellidoVisitante: EditText
-    lateinit var fechaVisita: EditText
-    lateinit var horaVisita: EditText
-    lateinit var celularVisita: EditText
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_visit)
 
-        viewInitializations()
-        saveVisit()
+        setUp()
     }
 
-    fun viewInitializations() {
-        idVisitante = findViewById(R.id.idVisitanteInput)
-        nombreVisitante = findViewById(R.id.nombreVisitanteInput)
-        apellidoVisitante = findViewById(R.id.apellidoVisitanteInput)
-        fechaVisita = findViewById(R.id.fechaIngresoInput)
-        horaVisita = findViewById(R.id.horaIngresoInput)
-        celularVisita = findViewById(R.id.celularInput)
+    private fun setUp() {
+        val buttonCarSave = findViewById<Button>(R.id.button_reg_visit)
+        buttonCarSave.setOnClickListener {
+            val idText = findViewById<EditText>(R.id.id_visitante)
+            val nombreText = findViewById<EditText>(R.id.nombre_visitante)
+            val apellidoText = findViewById<EditText>(R.id.apellido_visitante)
+            val fechaVisita = findViewById<EditText>(R.id.fecha_ingreso)
+            val horaVisita = findViewById<EditText>(R.id.hora_ingreso)
+            val celularVisita = findViewById<EditText>(R.id.celular_visitante)
 
+            if (!idText.text.isNullOrBlank() && !nombreText.text.isNullOrBlank() && !apellidoText.text.isNullOrBlank() &&
+            !fechaVisita.text.isNullOrBlank() && !horaVisita.text.isNullOrBlank() && !celularVisita.text.isNullOrBlank()) {
+                val idtxt = idText.text.toString()
+                val nombretxt = nombreText.text.toString()
+                val apellidotxt = apellidoText.text.toString()
+                val fechatxt = fechaVisita.text.toString()
+                val horatxt = horaVisita.text.toString()
+                val celulartxt = celularVisita.text.toString()
+                Visit(
+                    idtxt,
+                    nombretxt,
+                    apellidotxt,
+                    fechatxt,
+                    horatxt,
+                    celulartxt
+                )
+                Log.d("myTag", "This is my message $idText");
+
+                val miVisita = ArrayList<String>()
+                miVisita.add(idtxt)
+                miVisita.add(nombretxt)
+                miVisita.add(apellidotxt)
+                miVisita.add(fechatxt)
+                miVisita.add(horatxt)
+                miVisita.add(celulartxt)
+
+                //milista = arrayOf(idText, nombreText, apellidoText, fechaVisita, horaVisita, celularVisita)
+
+                print(nombreText)
+                showListVisit("propietario", miVisita)
+
+
+            } else {
+                val context = this
+                val alertBuilder = AlertDialog.Builder(context)
+                alertBuilder.setTitle(title)
+                alertBuilder.setMessage("Se deben rellenar todos los campos.")
+                alertBuilder.setPositiveButton("Aceptar", null)
+                val dialog: AlertDialog = alertBuilder.create()
+                dialog.show()
+            }
+
+        }
     }
 
-
-    private fun saveVisit() {
-
-        this.title = "Registrar visita"
-        val regVisitButton = findViewById<Button>(R.id.reg_visit_button)
-
-
-        regVisitButton.setOnClickListener {
-
-            val idVisita = idVisitante.text.toString()
-            val nombreVisita = nombreVisitante.text.toString()
-            val apellidoVisita = apellidoVisitante.text.toString()
-            val fechaVisita = fechaVisita.text.toString()
-            val horaVisita = horaVisita.text.toString()
-            val celular = celularVisita.text.toString()
-
-            if (validateForm()) {
-
-                val levelUpMessage = "¡Subiste de nivel!"
-                val newAbility = "Habilidad Tajo aprendida"
-
-                print(levelUpMessage)
-                print(newAbility)
-                }
-                alert("Registro exitoso", MESSAGE_ALERT)
-                clearForm()
-
-            }/* else {
-
-            }*/
+    private fun showListVisit(tipoUsuario: String, visita: ArrayList<String>) {
+        val listVisitIntent = Intent(this, ListVisitActivity::class.java).apply {
+            putExtra(Constants.TIPOUSUARIO, tipoUsuario)
+            putStringArrayListExtra("visita", visita)
         }
-
-
-    private fun validateForm(): Boolean {
-        var idvisitante = findViewById<TextInputLayout>(R.id.idVisitanteInput)
-        var nombreVisitante = findViewById<TextInputLayout>(R.id.nombreVisitanteInput)
-        var apellidoVisitante = findViewById<TextInputLayout>(R.id.apellidoVisitanteInput)
-        var fechaVisita = findViewById<TextInputLayout>(R.id.fechaIngresoInput)
-        var horaVisita = findViewById<TextInputLayout>(R.id.horaIngresoInput)
-        var celularVisita = findViewById<TextInputLayout>(R.id.celularInput)
-
-        var isValidForm = true
-
-        if (isValidForm && idvisitante.isEmpty()) {
-
-            alert("Debe ingresar el id del visitante", MESSAGE_ERROR)
-            isValidForm = false
-        }
-        if (isValidForm && nombreVisitante.isEmpty()) {
-            alert("Debe ingresar el nombre del visitante", MESSAGE_ERROR)
-            isValidForm = false
-        }
-        if (isValidForm && apellidoVisitante.isEmpty()) {
-            alert("Debe ingresar el apellido del visitante", MESSAGE_ERROR)
-            isValidForm = false
-        }
-        if (isValidForm && fechaVisita.isEmpty()) {
-            alert("Debe ingresar la fecha de visita del visitante", MESSAGE_ERROR)
-            isValidForm = false
-        }
-        if (isValidForm && horaVisita.isEmpty()) {
-            alert("Debe ingresar la hora de visita del visitante", MESSAGE_ERROR)
-            isValidForm = false
-        }
-        if (isValidForm && celularVisita.isEmpty()) {
-            alert("Debe ingresar numero de celular de la visita", MESSAGE_ERROR)
-            isValidForm = false
-        }
-        return isValidForm
+        startActivity(listVisitIntent)
+        finish()
     }
-
-    private fun alert(messageAlert: String, alertType: String) {
-        val alertBuilder = AlertDialog.Builder(this)
-        alertBuilder.setTitle(alertType)
-        alertBuilder.setMessage(messageAlert)
-        alertBuilder.setPositiveButton("Aceptar", null)
-        val dialog: AlertDialog = alertBuilder.create()
-        dialog.show()
-    }
-
-    private fun clearForm() {
-
-    }
-
-
-
 }
