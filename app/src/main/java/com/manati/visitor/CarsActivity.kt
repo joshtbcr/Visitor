@@ -34,6 +34,12 @@ class CarsActivity : AppCompatActivity() {
                     modelotxt,
                     marcatxt
                 )
+
+                val intent = Intent(this, CarListActivity::class.java)
+               // intent.putExtra(CarListActivity.PLACA,placatxt)
+               // intent.putExtra(CarListActivity.MODELO,modelotxt)
+               // intent.putExtra(CarListActivity.MARCA,marcatxt)
+                //startActivity(intent)
                 showHome("propietario")
 
             } else {
