@@ -79,6 +79,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(Intent(this, MainActivity::class.java))
                 drawerLayout.closeDrawer(GravityCompat.START)
             }
+            R.id.registrarCasa -> {
+                startActivity(Intent(this, RegisterHouseActivity::class.java))
+                drawerLayout.closeDrawer(GravityCompat.START)
+
+            }
+            R.id.listaCasas -> {
+                startActivity(Intent(this, ListHousesActivity::class.java))
+                drawerLayout.closeDrawer(GravityCompat.START)
+            }
             R.id.registrarVisita -> {
                 startActivity(Intent(this, RegisterVisitActivity::class.java))
                 drawerLayout.closeDrawer(GravityCompat.START)
