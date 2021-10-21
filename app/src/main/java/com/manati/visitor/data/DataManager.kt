@@ -10,13 +10,13 @@ object DataManager {
     }
 
     private fun initializeHouses() {
-        var house = HousesData("115990150", "25A")
+        var house = HousesData("604110141", "25A")
         houses.add(house)
 
-        house = HousesData("115990150", "30A")
+        house = HousesData("604110141", "30A")
         houses.add(house)
 
-        house = HousesData("115990150", "27BA")
+        house = HousesData("604110141", "27BA")
         houses.add(house)
     }
 }

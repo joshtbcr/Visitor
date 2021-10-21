@@ -42,7 +42,7 @@ class RegisterHouseActivity : AppCompatActivity() {
 
 //                DataManager.houses.add(newHouse)
 
-                showHome("propietario")
+                showHome()
 
             } else {
                 val context = this
@@ -57,8 +57,8 @@ class RegisterHouseActivity : AppCompatActivity() {
         }
     }
 
-    private fun showHome(tipoUsuario: String) {
-        setContentView(R.layout.activity_main)
+    private fun showHome() {
+        finish()
     }
 
    /* override fun onPause() {
