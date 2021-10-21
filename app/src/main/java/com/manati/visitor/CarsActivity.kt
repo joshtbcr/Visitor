@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import com.manati.visitor.data.DataManager
 import com.manati.visitor.model.Car
 import com.manati.visitor.model.Constants
+import com.manati.visitor.model.ModelCar
 import com.manati.visitor.model.TipoUsuario
 
 class CarsActivity : AppCompatActivity() {
+    private var carPosition = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,18 +32,12 @@ class CarsActivity : AppCompatActivity() {
                 val placatxt = placaText.text.toString()
                 val modelotxt = modeloText.text.toString()
                 val marcatxt = marcaText.text.toString()
-                Car(
-                    placatxt,
-                    modelotxt,
-                    marcatxt
-                )
 
-                val intent = Intent(this, CarListActivity::class.java)
-               // intent.putExtra(CarListActivity.PLACA,placatxt)
-               // intent.putExtra(CarListActivity.MODELO,modelotxt)
-               // intent.putExtra(CarListActivity.MARCA,marcatxt)
-                //startActivity(intent)
-                showHome("propietario")
+                DataManager.cars.add(ModelCar())
+                carPosition = DataManager.cars.lastIndex
+                saveCar()
+
+                showHome()
 
             } else {
                 val context = this
@@ -55,12 +52,22 @@ class CarsActivity : AppCompatActivity() {
             }
         }
 
-    private fun showHome(tipoUsuario: String) {
-        val homeIntent = Intent(this, MainActivity::class.java).apply {
-            putExtra(Constants.TIPOUSUARIO, tipoUsuario)
-        }
-        startActivity(homeIntent)
+    private fun showHome() {
         finish()
     }
+
+    private fun saveCar() {
+        val placaText = findViewById<EditText>(R.id.placaInput)
+        val modeloText = findViewById<EditText>(R.id.modeloInput)
+        val marcaText = findViewById<EditText>(R.id.marcaInput)
+
+        val car = DataManager.cars[carPosition]
+        car.placa = placaText.text.toString()
+        car.modelo = modeloText.text.toString()
+        car.marca = marcaText.text.toString()
+
+    }
+
+
 
 }

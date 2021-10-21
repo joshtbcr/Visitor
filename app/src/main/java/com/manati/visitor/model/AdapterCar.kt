@@ -15,12 +15,10 @@ class AdapterCar(var mCtx: Context, var resources:Int, var items:List<ModelCar>)
         val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
         val view:View = layoutInflater.inflate(resources, null)
 
-        val imageView: ImageView = view.findViewById(R.id.imageCar)
         val placaTextView: TextView = view.findViewById(R.id.carPlaca)
         val marcaTextView: TextView = view.findViewById(R.id.carMarca)
 
         var mItem:ModelCar = items.get(position)
-        imageView.setImageDrawable(mCtx.resources.getDrawable(mItem.img))
         placaTextView.text = mItem.placa
         marcaTextView.text = mItem.marca
         return view
