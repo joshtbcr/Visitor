@@ -73,12 +73,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         intentMenu.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         when (menuItem.itemId) {
 
-            //---------------------------Buyer Items----------------------------------
+            //---------------------------Menu Items----------------------------------
 
-            R.id.home -> {
-                startActivity(Intent(this, MainActivity::class.java))
-                drawerLayout.closeDrawer(GravityCompat.START)
-            }
             R.id.registrarCasa -> {
                 startActivity(Intent(this, RegisterHouseActivity::class.java))
                 drawerLayout.closeDrawer(GravityCompat.START)

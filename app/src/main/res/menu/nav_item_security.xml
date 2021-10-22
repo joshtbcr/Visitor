@@ -5,11 +5,6 @@
         >
         <menu>
             <item
-                android:id="@+id/home"
-                android:title="@string/home"
-                android:icon="@drawable/ic_notification"
-                />
-            <item
                 android:id="@+id/listaVisitas"
                 android:title="@string/listaVisitas"
                 android:icon="@drawable/ic_visitantes"

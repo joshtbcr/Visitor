@@ -1,5 +1,5 @@
 package com.manati.visitor.model
 
-class ModelCar (val placa:String, val modelo:String, val marca:String, val img:Int) {
+data class ModelCar (var placa:String? = null, var modelo:String? = null, var marca:String? = null) {
 
 }
